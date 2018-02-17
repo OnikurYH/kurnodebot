@@ -7,6 +7,8 @@ A self-hosted twitch chatbot
 
 This chatbot is using the native Go TCP package "net" connect to Twitch IRC. To handle the user input used BleveSearch for full text searching. Weather information from Open Weather Map.
 
+Why I will make this project? Since I want to make my own chatbot on my Twitch Channel for fun =P
+
 ## Build & Run from source
 
 ### Pre-requirment
