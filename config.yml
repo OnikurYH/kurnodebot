@@ -1,0 +1,48 @@
+server:
+  username: <Twitch username>
+  password: <Twitch password>
+  channel: <Twitch channel>
+  limit-send-count: 100
+external:
+  open-weather-map:
+    api-key: <Open weather map api key>
+rules:
+  - input:
+      type: MESSAGE
+      content: Hello
+    output:
+      type: MESSAGE
+      content: Hello, {{username}}!
+  - input:
+      type: MESSAGE
+      content: Hello, World!
+    output:
+      type: MESSAGE
+      content: Look like you will hello in the programming world!
+  - input:
+      type: COMMAND
+      content: hi
+    output:
+      type: MESSAGE
+      content: Hello, {{username}}!
+  - input:
+      type: COMMAND
+      content: time
+    output:
+      type: TIME
+      time-format: 2006 Jan _2 15:04:05 MST
+      content: "Current time: {{time}}"
+  - input:
+      type: COMMAND
+      content: weather
+    output:
+      type: WEATHER_CURRENT
+      default-location: Hong Kong
+      units: metric
+      content: "Current weather in {{name}} - Temp: {{temp}}°C, Min temp: {{temp_min}}°C, Max temp: {{temp_max}}°C"
+schedulers:
+  - interval: 120
+    output:
+      type: TIME
+      time-format: 2006 Jan _2 15:04:05 MST
+      content: "Current time: {{time}}"
